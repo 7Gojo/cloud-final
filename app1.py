@@ -27,8 +27,8 @@ def run_risk_simulation(df, target, neighbors):
             p_val = gc_test[1][0]['ssr_chi2test'][1]
             def verify_stability(df, target, migration_path):
     # Simulate a 10% noise increase to see if the service breaks
-    simulated_load = df[target] * 1.10
-    variance = simulated_load.var()
+        simulated_load = df[target] * 1.10
+        variance = simulated_load.var()
     
     if variance > df[target].var() * 1.5:
         return "UNSTABLE: High Variance detected. Rollback initiated."
